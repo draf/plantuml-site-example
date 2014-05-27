@@ -130,16 +130,23 @@
 			<plugin>
 				<groupId>com.github.jeluard</groupId>
       				<artifactId>plantuml-maven-plugin</artifactId>
-      				<version>7941</version>
+      				<version>1.1</version>
       				<configuration>
         				<sourceFiles>
-          					<directory>${basedir}</directory>
+          					<directory>${basedir}/src/plantuml</directory>
           					<includes>
-            						<include>src/plantuml/**/*.txt</include>
-            					</includes>
+            						<include>*.txt</include>
+            				</includes>
         				</sourceFiles>
 					<outputDirectory>${basedir}/src/site/resources/images</outputDirectory>
       				</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>net.sourceforge.plantuml</groupId>
+							<artifactId>plantuml</artifactId>
+							<version>7999</version>
+						</dependency>
+					</dependencies>
 				<executions>
 					<execution>
 						<phase>pre-site</phase>
